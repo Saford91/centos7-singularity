@@ -127,7 +127,12 @@ umask 0022
 #yum -y install xorg-x11-drv-nvidia-libs
 
 #rpm -ivh https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
- 
+
+################################################################################
+# Install EPEL to provide PIP
+################################################################################
+yum -y install epel-release
+
 ################################################################################
 # Install PIP for Python 2.7 and 3.4
 ################################################################################
@@ -143,10 +148,14 @@ pip  install --upgrade virtualenv
 ################################################################################
 # Create directories to enable accessing common HPCC mount points
 ################################################################################
-for dir in /cvmfs /mnt/{home,research,{d,f}fs17,ls15,local} /opt/software; do
-  test -d $dir || mkdir $dir
-done
- 
+mkdir /cvmfs
+mkdir /mnt/home
+mkdir /mnt/research
+mkdir /mnt/dfs17
+mkdir /mnt/ffs17
+mkdir /mnt/local
+mkdir /opt/software
+
 ################################################################################
 # Change the command prompt to show that we are in a container
 ################################################################################
