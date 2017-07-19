@@ -5,26 +5,8 @@ OSVersion: 7
 MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
 Include: yum
  
-# Specify files to be copied into the container during bootstrapping. This
-# container copies profile scripts to configure its environment similar to
-# that on the HPCC development nodes. These scripts also configure access to
-# the HPCC software modules, however, full functionality is not guaranteed
-# for software loaded inside the container.
 %files
-#/etc/profile.d/00_expand_aliases.sh       /etc/profile.d/00_expand_aliases.sh
-#/etc/profile.d/hpcc-cluster-flavor.csh    /etc/profile.d/hpcc-cluster-flavor.csh
-#/etc/profile.d/hpcc-cluster-flavor.sh     /etc/profile.d/hpcc-cluster-flavor.sh
-#/etc/profile.d/hpcc.sh                    /etc/profile.d/hpcc.sh
-#/etc/profile.d/modules.csh                /etc/profile.d/modules.csh
-#/etc/profile.d/modules.sh                 /etc/profile.d/modules.sh
-#/etc/profile.d/mpi-selector.csh           /etc/profile.d/mpi-selector.csh
-#/etc/profile.d/mpi-selector.sh            /etc/profile.d/mpi-selector.sh
-#/etc/profile.d/powertools_getexample.sh   /etc/profile.d/powertools_getexample.sh
-#/etc/profile.d/suse-compat.sh             /etc/profile.d/suse-compat.sh
-#/etc/profile.d/torque.csh                 /etc/profile.d/torque.csh
-#/etc/profile.d/udisks-bash-completion.sh  /etc/profile.d/udisks-bash-completion.sh
-#/etc/profile.d/z_cmich_user_passwd.sh     /etc/profile.d/z_cmich_user_passwd.sh
-#/etc/profile.d/z_wmich_user_passwd.sh     /etc/profile.d/z_wmich_user_passwd.sh
+root/.rpmmacros /root/.rpmmacros
  
 %post
 ################################################################################
