@@ -22,11 +22,6 @@ umask 0022
 yum -y install vim
 
 ################################################################################
-# Install tools for development
-################################################################################
-yum -y groupinstall 'Development Tools'
-
-################################################################################
 # Install PIP from EPEL and upgrade it to the latest version
 ################################################################################
 yum -y install epel-release
@@ -34,7 +29,12 @@ yum -y install python34-pip python-pip
 pip  install --upgrade pip
 pip3 install --upgrade pip
 pip  install --upgrade virtualenv
- 
+
+################################################################################
+# Install CUDA drivers that match the version on the HPCC
+################################################################################
+rpm -ivh https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
+
 ################################################################################
 # Create directories to enable access to common HPCC mount points
 ################################################################################
