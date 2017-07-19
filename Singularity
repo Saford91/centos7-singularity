@@ -147,7 +147,7 @@ umask 0022
 # Install the same version of Nvidia drivers that is in use on compute nodes.
 #yum -y install xorg-x11-drv-nvidia-libs
 
-rpm -ivh https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
+#rpm -ivh https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/cuda-repo-rhel7-8.0.61-1.x86_64.rpm
  
 ################################################################################
 # Install PIP for Python 2.7 and 3.4
