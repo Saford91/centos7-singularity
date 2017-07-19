@@ -1,12 +1,9 @@
 # Bootstrap definition to install minimal CentOS 7 with Python virtaulenv
  
-BootStrap: yum
-OSVersion: 7
-MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/
-Include: yum
+BootStrap: docker
+From: centos:latest
  
 %files
-root/.rpmmacros /root/.rpmmacros
  
 %post
 ################################################################################
